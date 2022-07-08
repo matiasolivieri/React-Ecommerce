@@ -70,24 +70,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-### Clase 02
-
-**Primera primicia**
-
-- Con React se pueden hacer paginas y aplicaciones SPA, se ven afectados los componentes sin necesidad de realizar una carga de la pagina.
-
-**Segunda primicia**
-
-- El traspaso de datos en React siempre es unidireccional, en el caso normal es de arriba hacia abajo. Vamos a estar pasando los componentes de mayor a menor, el componente padre hacia el hijo.
-- Tambien podemos hacer al revez, de abajo hacia arriba. Por ejemplo para subir un evento.
-
-**Virtual DOM**
-
-- Es un patron de comportamiento, React lo interpreta como la tecnologia Fiber.
-
-**Versionado**
-
-- Con "npm install" instalamos todo lo que haya en el package.json en el lugar dependencias.
-- El package.json mantiene el versionado de todas las dependencias.
-- El package-lock.json mantiene actualizado los versionado de las dependencias.
