@@ -1,11 +1,11 @@
-import './App.css';
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Proximamente TecnoPC...</h1>
-    </div>
-  );
+    return (
+    <>
+        <NavBar/>
+    </>
+    );
 }
 
 export default App;
