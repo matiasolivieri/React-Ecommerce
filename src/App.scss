@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+
+}
+
+.main-container {
+    float: left;
+    width: 100%;
+}
+
+.list-products {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    h2 {
+        margin-bottom: 20px;
+    }
+}

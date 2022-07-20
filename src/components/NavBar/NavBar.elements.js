@@ -10,13 +10,14 @@ background-color: #0F0E0E;
 `;
 
 export const NavbarWrapper = styled.div`
-margin: auto;
+margin-left: -10px;
 width: 100%;
 height: 100%;
 align-items: center;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
+color: #898888
 `;
 
 export const IconLogo = styled.div`
@@ -44,7 +45,7 @@ align-items: center;
     left: ${({click}) => click ? 0 : "-100%"};
     flex-direction: column;
     transition: 0.5s all ease-in;
-    background-color: #222224;
+    background-color: #49426c;
 }
 `;
 
