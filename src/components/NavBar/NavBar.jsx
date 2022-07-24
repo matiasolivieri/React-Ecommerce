@@ -1,46 +1,21 @@
-import React, {useState} from "react";
-import { IconLogo, MenuItem, MenuItemLink, NavbarContainer, NavbarWrapper, Menu, IconLogoMobile } from "./NavBar.elements"
-import { FaBars, FaTimes } from "react-icons/fa"
-import CartWidget from "./CartWidget";
+import './NavBar.scss'
+import CartWidget from './CartWidget'
 
 const NavBar = () => {
-    const [click, setClick] = useState(false);
-
-    const ChangeClick = () => {
-        setClick(!click);
-    };
-  return (
-    <>
-    <NavbarContainer>
-        <NavbarWrapper>
-            <IconLogo> 
-            TecnoPC 
-            </IconLogo>
-            <IconLogoMobile onClick = { () => ChangeClick() }>
-                {click ? <FaTimes/> : <FaBars/>}
-            </IconLogoMobile>
-            <Menu click = {click}>
-                <MenuItem onClick = { () => ChangeClick() }>
-                    <MenuItemLink> INICIO </MenuItemLink>
-                </MenuItem>
-                <MenuItem onClick = { () => ChangeClick() }>
-                    <MenuItemLink> CONTACTO </MenuItemLink>
-                </MenuItem>
-                <MenuItem onClick = { () => ChangeClick() }>
-                    <MenuItemLink> REGLAS </MenuItemLink>
-                </MenuItem>
-                <MenuItem onClick = { () => ChangeClick() }>
-                    <MenuItemLink> SERVICIOS </MenuItemLink>
-                </MenuItem>
-                <MenuItem onClick = { () => ChangeClick() }>
-                    <MenuItemLink> OFERTAS </MenuItemLink>
-                </MenuItem>
-                <CartWidget/>
-            </Menu>
-        </NavbarWrapper>
-    </NavbarContainer> 
-    </>
-  )
+    return(
+        // Fragment
+        <div className='navbar-primary'>
+            <img src="/assets/tecnopc.png" alt="logo adidas" />
+            <ul>
+                <li><button>Inicio</button></li>
+                <li><button>Productos</button></li>
+                <li><button>Sobre Nosotros</button></li>
+                <li><button>Contactanos</button></li>
+                <li><button>Sorteos</button></li>
+            </ul>
+            <CartWidget />
+        </div>
+    )
 }
 
 export default NavBar;

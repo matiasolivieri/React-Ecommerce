@@ -1,0 +1,19 @@
+.countProd {
+    display: block;
+    /* height: 77px; */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.countProd p {
+    font-size: 22px;
+}
+
+.countProd button {
+    padding: 10px;
+    font-size: 17px;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+}

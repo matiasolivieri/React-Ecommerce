@@ -1,13 +1,36 @@
-import ItemProduct from "../ItemProduct/ItemProduct"
+import { useEffect, useState } from "react"
+import ItemList from "../ItemList/ItemList"
+import './ItemListContainer.scss'
+import products from '../../utils/products.mock'
 
-export const ItemListContainer = ({section}) => {
+const ItemListContainer = ({section}) => {
+
+    const [listProducts, setListProducts] = useState([])
+
+    const getProducts = new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            resolve(products)
+        }, 2000)
+    })
+
+    useEffect(() => {
+        getProducts
+            .then( (res) => { 
+                setListProducts(res)
+            })
+            .catch( (error) => { 
+                console.log("La llamada fallo")
+            })
+            .finally( () => { 
+            })
+    })
+
     return(
         <div className='list-products'>
             <h2>{section}</h2>
-            <ItemProduct title="Equipo Intel Core I5 11400f Pro Gamer – 16Gb 3200mhz – SSD – RTX3050" price={1250} image={'inteljpg.jpg'} />
-            <ItemProduct title="Equipo AMD Ryzen 5 5600G Pro Gamer - 16 Gb - SSD - Radeon Graphics" price={690} image={'amd.jpg'} />
+            <ItemList dataProducts={listProducts}/>
         </div>
     )
 }
 
-export default ItemListContainer;
+export default ItemListContainer
