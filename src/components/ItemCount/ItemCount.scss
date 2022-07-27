@@ -4,16 +4,22 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-}
 
-.countProd p {
-    font-size: 22px;
-}
+        p {
+            font-size: 22px;
+        }
 
-.countProd button {
-    padding: 10px;
-    font-size: 17px;
-    margin: 5px;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 5px;
+        button {
+            padding: 10px;
+            font-size: 17px;
+            margin: 5px;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 5px;
+        }
+
+        span {
+            font-size: 23px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 }
