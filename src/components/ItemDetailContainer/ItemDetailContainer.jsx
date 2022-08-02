@@ -1,34 +1,53 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import './ItemDetailContainer.scss'
-import product from '../../utils/product.mock'
+import products from '../../utils/products.mock'
+import {useParams} from "react-router-dom"
 
-const ItemDetailContainer = ({section}) => {
+const ItemDetailContainer = () => {
 
-    const [oneProduct, setOneProduct] = useState([])
+    const [Item, setItem] = useState([])
+    const {id} = useParams()
+    const filterId = products.filter( (products) => products.id === Number(id) )
 
-    const getProduct = new Promise( (resolve, reject) => {
-        setTimeout( () => {
-            resolve(product)
+    const getItem  = () => new Promise ((resolve, reject)=>{
+        setTimeout(() =>{
+       
+          resolve (filterId[0])
+        
         }, 2000)
+       
     })
 
     useEffect(() => {
-        getProduct
-            .then( (res) => { 
-                setOneProduct(res)
-            })
-            .catch( (error) => { 
-                console.log("La llamada fallo")
-            })
-            .finally( () => { 
-            })
-    })
+  
+        const ItemAwait = async () => {
+   
+         try{
+        
+             const responseLog = await getItem()
+           
+             
+             setItem(responseLog)
+         }
+   
+   
+         catch(error){
+   
+            console.log(error)
+   
+         }
+   
+   
+     }
+
+     ItemAwait()
+  
+    }, [])
 
     return(
         <div className='list-products'>
-            <h2>{section}</h2>
-            <ItemDetail dataProducts={oneProduct}/>
+            <ItemDetail products={Item}/>
         </div>
     )
 }

@@ -2,33 +2,44 @@ import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.scss'
 import products from '../../utils/products.mock'
+import { useParams } from 'react-router-dom'
 
-const ItemListContainer = ({section}) => {
+const ItemListContainer = ({article}) => {
 
-    const [listProducts, setListProducts] = useState([])
+    const [listProduct, setlistProduct] = useState([])
+    const {categoryid} = useParams()
+    const filterByCategory = products.filter((products) => products.category === categoryid)
 
-    const getProducts = new Promise( (resolve, reject) => {
-        setTimeout( () => {
-            resolve(products)
+    const getProducts  = () => new Promise ((resolve, reject)=>{
+        setTimeout(() =>{
+  
+          if (categoryid === "Computers" || categoryid === "Videocards" || categoryid === "Monitores"){
+              resolve (filterByCategory)
+          }
+          else{
+                resolve (products)
+          }
         }, 2000)
     })
-
+  
     useEffect(() => {
-        getProducts
-            .then( (res) => { 
-                setListProducts(res)
-            })
-            .catch( (error) => { 
-                console.log("La llamada fallo")
-            })
-            .finally( () => { 
-            })
-    })
+      const getProduct = async () => {
+  
+        try{
+            const responseLog = await getProducts()
+            setlistProduct(responseLog)
+        }
+        catch(error){
+           console.log(error)
+        }
+    }
+      getProduct()
+    }, )
 
     return(
         <div className='list-products'>
-            <h2>{section}</h2>
-            <ItemList dataProducts={listProducts}/>
+        <h2>{article}</h2>
+            <ItemList dataProducts={listProduct}/>
         </div>
     )
 }

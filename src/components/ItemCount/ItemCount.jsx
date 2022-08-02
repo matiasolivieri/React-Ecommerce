@@ -2,7 +2,7 @@ import { useState } from "react";
 import './ItemCount.scss'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-const ItemCount = ({initial, stock, onAdd}) => {
+const ItemCount = ({initial, stock}) => {
 
     const [count, setCount] = useState(initial);
 
@@ -22,7 +22,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
             <button disabled ={count >= stock} onClick={increase}><AiOutlinePlus/></button>
             </div>
             <div>
-                <button disabled = {stock <= 0} onClick={() => onAdd(count)}>Agregar al carrito</button>
+                <button disabled = {stock <= 0}>Agregar al carrito</button>
             </div>
         </div>
     )
