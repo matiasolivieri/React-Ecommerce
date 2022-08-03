@@ -1,8 +1,13 @@
 import ItemCount from "../ItemCount/ItemCount"
 import './ItemDetail.scss'
 import { AiOutlineTag } from "react-icons/ai" 
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import Checkout from "../Checkout/Checkout"
 
 const ItemDetail = ({products}) => {
+
+    const [quantitySelected, setQuantitySelected] = useState(1)
 
     const {title , description,  price , image , stock}  = products
     
@@ -13,10 +18,15 @@ const ItemDetail = ({products}) => {
                     <div className='content'>
                     <h2>{title}</h2>
                     <h3>Envio gratis</h3>
+                    <h5>OFERTA</h5>
                     <li> {description}</li>
                     <h4><AiOutlineTag /> Stock disponible: {stock}</h4>
                     <h1>USD {price}</h1>
-                    <ItemCount initial={1} stock={stock}/>
+                    {console.log('cantidad', quantitySelected)}
+                    {
+                        quantitySelected > 1 ?  <Link to='/cart'><Checkout/></Link> : <ItemCount initial={1} stock={stock} setQuantitySelected={setQuantitySelected}/>
+                    }
+                    
                 </div>
             </div>
         </div>

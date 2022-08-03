@@ -36,15 +36,27 @@
 
     h3 {
       font-size: 12px;
-      padding: 5px;
-      margin: 0;
+      display: inline;
+      padding: 9px;
+      margin-right: 6px;
       line-height: 16px;
       width: 100px;
       text-align: center;
-      background: #00a650;
+      background: #f5aa1e;
       font-family: 'Montserrat', sans-serif;
       color: white;
   }
+  h5 {
+    font-size: 12px;
+    display: inline;
+    padding: 9px;
+    line-height: 16px;
+    width: 100px;
+    text-align: center;
+    background: #00a650;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
 
     h1 {
       font-size: 36px;
@@ -82,3 +94,18 @@
     justify-content: space-between;
 
   }
+
+  .countProd {
+    display: block;
+    /* height: 77px; */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    button {
+      padding: 10px;
+      font-size: 17px;
+      margin: 5px;
+      font-family: 'Montserrat', sans-serif;
+      border-radius: 5px;
+  }
+}

@@ -19,7 +19,7 @@ const ItemListContainer = ({article}) => {
           else{
                 resolve (products)
           }
-        }, 2000)
+        })
     })
   
     useEffect(() => {

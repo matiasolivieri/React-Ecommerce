@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
        
           resolve (filterId[0])
         
-        }, 2000)
+        })
        
     })
 
