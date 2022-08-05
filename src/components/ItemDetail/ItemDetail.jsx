@@ -22,9 +22,8 @@ const ItemDetail = ({products}) => {
                     <li> {description}</li>
                     <h4><AiOutlineTag /> Stock disponible: {stock}</h4>
                     <h1>USD {price}</h1>
-                    {console.log('Cantidad agregada:', quantitySelected)}
                     {
-                        quantitySelected > 1 ?  <Link to='/cart'><Checkout/></Link> : <ItemCount initial={1} stock={stock} setQuantitySelected={setQuantitySelected}/>
+                        quantitySelected > 0 ?  <Link to='/cart'><Checkout/></Link> : <ItemCount initial={1} stock={stock} setQuantitySelected={setQuantitySelected}/>
                     }
                     
                 </div>
