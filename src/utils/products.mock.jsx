@@ -7,6 +7,7 @@ const products = [
         price: 375,
         image: 'amd0.jpg',
         stock: 6,
+        inCart: 0,
     },
     {
         id:2,
@@ -15,6 +16,7 @@ const products = [
         category: "Computers",
         price: 1075,
         image: 'amd2.jpg',
+        inCart: 0,
         stock: 10,
     },
     {
@@ -24,6 +26,7 @@ const products = [
         category: "Computers",
         price: 1250,
         image: 'amd1.jpg',
+        inCart: 0,
         stock: 20,
     },
     {
@@ -33,6 +36,7 @@ const products = [
         category: "Computers",
         price: 1650,
         image: 'amd3.jpg',
+        inCart: 0,
         stock: 13,
     },
     {
@@ -42,6 +46,7 @@ const products = [
         description: "Gabinete Antec NX800 ARGB – incluye 3 fanes Fuente Cooler Master MWE 850W 80 Plus Gold Full Modular Mother Asus TUF B550M Gaming con 4 bancos DDR4 hasta 128Gb – soporte m.2 PCIe Procesador AMD Ryzen 9 5900X 12 núcleos 24 hilos 3,7 / 4,8Ghz + Watercooling Antec Neptune 240 Memoria Kingston Fury Beast 32Gb DDR4 3200mhz (2 x 16Gb) Disco SSD 1Tb M.2 PCIe Gráficos Geforce RTX3080",
         price: 3500,
         image: 'amd4.jpg',
+        inCart: 0,
         stock: 7,
     },
     {

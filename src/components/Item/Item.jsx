@@ -4,8 +4,7 @@ import {Link} from 'react-router-dom'
 
 const Item = ({data}) => {
 
-    const {title, image, price, stock, id} = data
-    
+    const {title, inCart, image, price, stock, id} = data
 
     return(
         

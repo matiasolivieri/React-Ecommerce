@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import './ItemCount.scss'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { CartContext } from "../../context/CartContext";
 
-const ItemCount = ({initial, stock, setQuantitySelected}) => {
+const ItemCount = ({initial, stock, setQuantitySelected, productData}) => {
 
+    const {addProductToCart} = useContext(CartContext)
     const [count, setCount] = useState(initial);
 
     const decrease = () => {
@@ -14,6 +16,8 @@ const ItemCount = ({initial, stock, setQuantitySelected}) => {
     }
 
     const onAdd = () => {
+        console.log("Agregaste al carrito", productData)
+        addProductToCart(productData, count)
         setQuantitySelected(count)
     }
 
