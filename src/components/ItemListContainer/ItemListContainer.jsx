@@ -13,7 +13,7 @@ const ItemListContainer = ({article}) => {
     const getProducts  = () => new Promise ((resolve, reject)=>{
         setTimeout(() =>{
   
-          if (categoryid === "Computers" || categoryid === "Videocards" || categoryid === "Monitores"){
+          if (categoryid === "Computadoras" || categoryid === "Videocards" || categoryid === "Monitores" || categoryid === "Consolas" || categoryid === "Procesadores" || categoryid === "Sillas Gamer"){
               resolve (filterByCategory)
           }
           else{
