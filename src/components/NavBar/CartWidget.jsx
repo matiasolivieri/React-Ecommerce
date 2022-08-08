@@ -74,7 +74,7 @@ return(
                     </div>
                 )
             })}
-             {cartProducts.length>0? <button className="comprarCarrito" onClick={() => buyCart()}>COMPRAR CARRITO</button>:<></>}
+             {cartProducts.length>0? <button className="comprarCarrito" onClick={() => buyCart()}>Comprar carrito</button>:<></>}
             {cartProducts.length>0? <button className="eliminarCarrito" onClick={() => clearCart()}>Eliminar carrito</button>:<div className="carritoVacio"><p>¡El carrito esta vacio!</p></div>}           
         </Menu>
     </div>

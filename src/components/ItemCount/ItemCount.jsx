@@ -16,7 +16,6 @@ const ItemCount = ({initial, stock, setQuantitySelected, productData}) => {
     }
 
     const onAdd = () => {
-        console.log("Agregaste al carrito", productData)
         addProductToCart(productData, count)
         setQuantitySelected(count)
     }
@@ -25,12 +24,12 @@ const ItemCount = ({initial, stock, setQuantitySelected, productData}) => {
     return (
         <div className='countProd'>
             <div>
-            <button disabled ={count <=1} onClick={decrease}><AiOutlineMinus/></button>
+            <button className='restar' disabled ={count <=1} onClick={decrease}><AiOutlineMinus/></button>
             <span>{count}</span>
-            <button disabled ={count >= stock} onClick={increase}><AiOutlinePlus/></button>
+            <button className='agregar' disabled ={count >= stock} onClick={increase}><AiOutlinePlus/></button>
             </div>
             <div>
-                <button disabled = {stock <= 0} onClick={onAdd}>Agregar al carrito</button>
+                <button className='carrito' disabled = {stock <= 0} onClick={onAdd}>Agregar al carrito</button>
             </div>
         </div>
     )

@@ -8,18 +8,45 @@
         p {
             font-size: 22px;
         }
-
-        button {
-            padding: 10px;
-            font-size: 17px;
-            margin: 5px;
-            font-family: 'Montserrat', sans-serif;
-            border-radius: 5px;
-        }
-
         span {
             font-size: 23px;
             margin-left: 10px;
             margin-right: 10px;
         }
+}
+
+.agregar {
+    padding: 10px;
+    font-size: 17px;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+}
+
+.agregar:hover {
+    background-color: rgb(152, 247, 181);
+}
+
+.restar {
+    padding: 10px;
+    font-size: 17px;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+}
+
+.restar:hover {
+    background-color: rgb(253, 174, 174)
+}
+
+.carrito {
+    padding: 10px;
+    font-size: 17px;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+}
+
+.carrito:hover {
+    background-color: rgb(174, 221, 253)
 }
