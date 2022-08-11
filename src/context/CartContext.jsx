@@ -1,26 +1,27 @@
 import { createContext, useState, useEffect } from "react";
 
-
-const CartContext =createContext();
-
+const CartContext = createContext();
 
 const CartProvider =({children})=>{
     const [cartProducts, setCartProducts] = useState([]);
-
+    const [totalProducts, setTotalProducts] = useState(0)
+    const [totalCart, setTotalCart] = useState(0)
     const [inCart, setInCart] = useState()
-
 
     useEffect(() => {
       }, [inCart])
 
-
     function addProductToCart(productData,ItemCounter){
         if(!cartProducts.includes(productData)){
             productData.inCart=ItemCounter;
+            setTotalProducts(totalProducts + productData.inCart)
             setCartProducts(cartProducts=> [...cartProducts, productData])
         } else{
             addUnitsToCart(productData,ItemCounter);
         }
+        setTotalCart(
+            totalCart + productData.price * productData.inCart
+        )
 
     }
 
@@ -30,14 +31,14 @@ const CartProvider =({children})=>{
         setCartProducts(cartProducts);
     }
 
-    function removeUnitFromCart(productData){
-        if(productData.inCart>1){
-            let indexToUpdate= cartProducts.indexOf(productData)
-            cartProducts[indexToUpdate].inCart=parseInt(cartProducts[indexToUpdate].inCart)-1;
-        } else{
-            removeAllUnitsFromCart(productData);
-        }
-        
+    const clearProduct = ( id ) => {
+        const prod = cartProducts.find((product) => product.id === id)
+        setTotalCart(
+            totalCart - prod.price * prod.inCart
+        )
+        setTotalProducts(totalProducts - prod.inCart)
+        const newCart = cartProducts.filter((product) => product.id !== id)
+        setCartProducts(newCart);
     }
 
     function removeAllUnitsFromCart(productData){
@@ -46,15 +47,13 @@ const CartProvider =({children})=>{
     }
 
     function buyCart(){
-        console.log("por el momento, vaciar carrito y redirigir a mercadopago => LUEGO HACER PANTALLA DE FINALIZACION COMPRA")
-        /* y vaciar carrito */
         clearCart();
-
-
     }
 
     function clearCart(){
-        setCartProducts([]);
+        setCartProducts([])
+        setTotalProducts(0)
+        setTotalCart(0)
     }
 
 
@@ -62,9 +61,11 @@ const CartProvider =({children})=>{
         cartProducts,
         addProductToCart,
         clearCart,
-        removeUnitFromCart,
+        clearProduct,
         removeAllUnitsFromCart,
-        buyCart
+        buyCart,
+        totalProducts,
+        totalCart
     }
     return (
         <CartContext.Provider value={data}>

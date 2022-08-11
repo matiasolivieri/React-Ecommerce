@@ -13,7 +13,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartWidget =()=>{
 
-    const { cartProducts, clearCart, addProductToCart,removeUnitFromCart,removeAllUnitsFromCart, buyCart} = useContext(CartContext)
+    const { cartProducts, clearCart, addProductToCart,removeUnitFromCart,removeAllUnitsFromCart, buyCart, totalProducts} = useContext(CartContext)
 
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -42,6 +42,7 @@ const CartWidget =()=>{
     
 return(
     <div className='cart-widget'>
+    {cartProducts.length !== 0 && <p>{totalProducts}</p> }
         <ShoppingCartIcon 
             aria-controls={open ? 'basic-menu' : undefined}
             aria-haspopup="true"
