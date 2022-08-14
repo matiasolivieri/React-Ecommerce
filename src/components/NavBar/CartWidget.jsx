@@ -1,8 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import "./CartWidget.scss";
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 
 /*  import material */
 import {useState } from 'react'
@@ -13,20 +11,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartWidget =()=>{
 
-    const { cartProducts, clearCart, addProductToCart,removeUnitFromCart,removeAllUnitsFromCart, buyCart, totalProducts} = useContext(CartContext)
+    const { cartProducts, clearCart, removeAllUnitsFromCart, buyCart, totalProducts} = useContext(CartContext)
 
     const [anchorEl, setAnchorEl] = useState(null);
 
     const [amountInCart, setAmountInCart] = useState(0);
 
-    function handleClickAdd(product){
-        setAmountInCart(product.inCart + 1);
-        addProductToCart(product, 1)
-    }
-    function handleClickRemove(product){
-        setAmountInCart(product.inCart - 1);
-        removeUnitFromCart(product)
-    }
     function handleClickRemoveAll(product){
         setAmountInCart(0);
         removeAllUnitsFromCart(product);
@@ -65,11 +55,9 @@ return(
                         <div className='cart-product__details'>
                             <p className="widgetTitle">{product.title}</p>
                             <p>Cantidad: {product.inCart}</p>
-                            <p className="widgetPrice">$ {product.price}</p>
+                            <p className="widgetPrice">$ {product.price * product.inCart}</p>
                         </div>
                         <div className='cart-product__action'>
-                            <AddIcon className="WidgetAdd" onClick={()=> handleClickAdd(product)}/>
-                            <RemoveIcon className="WidgetRemove" onClick={()=> handleClickRemove(product)}/>
                             <DeleteIcon className="WidgetClear" onClick={()=> handleClickRemoveAll(product)}/>
                         </div>
                     </div>

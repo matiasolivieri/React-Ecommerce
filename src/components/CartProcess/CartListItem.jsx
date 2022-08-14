@@ -30,14 +30,12 @@ const CartListItem = () => {
                                         </div>
                                     </div>
                                     <div className="cart-total">
-                                        <span>Subtotal:</span>
-                                        <h4>USD { TotalPrice }</h4>
+                                        <h4>Subtotal: { TotalPrice }</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     )
-
                 }) }
 
                 <div className="row">
