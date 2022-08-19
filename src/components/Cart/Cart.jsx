@@ -57,7 +57,7 @@ const Cart = () => {
                         const { title, image, price, inCart} = cartProduct
                         return(
                             <div className="checkout-item">
-                                <img src={`./assets/${image}`} alt="imagen" />
+                                <img src={`./assets/${image}`} alt="imagen de producto" />
                                 <div className="info-checkout-item">
                                     <p>{title}</p>
                                     <p><AiOutlineCar/> Envio gratis por este mes</p>
