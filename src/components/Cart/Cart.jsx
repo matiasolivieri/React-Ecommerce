@@ -16,7 +16,8 @@ const Cart = () => {
             return {
                 id: product.id,
                 title: product.title,
-                price: product.price
+                price: product.price,
+                quantity: product.inCart
             }
         } ),
         buyer: {},
@@ -90,7 +91,7 @@ const Cart = () => {
                             </div>
                 </div>
                 {showModal && 
-                    <Modal title="DATOS DE CONTACTO" close={() => setShowModal()}>
+                    <Modal title="INGRESO DE DATOS PARA PEDIDO" close={() => setShowModal()}>
                         {success ? (
                             <>
                                <h2>Su orden se genero correctamente</h2>
