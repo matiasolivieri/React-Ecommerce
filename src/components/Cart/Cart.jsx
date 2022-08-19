@@ -37,7 +37,6 @@ const Cart = () => {
 
     const submitData = (e) => {
         e.preventDefault()
-        console.log("order para enviar: ", {...order, buyer: formData})
         pushData({...order, buyer: formData})
     }
 
@@ -45,7 +44,6 @@ const Cart = () => {
         const collectionOrder = collection(db, 'ordenes')
         const orderDoc = await addDoc(collectionOrder, newOrder)
         setSuccess(orderDoc.id)
-        console.log('ORDEN GENERADA', orderDoc)
     }
 
     return(
