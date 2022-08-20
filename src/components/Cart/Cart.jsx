@@ -29,6 +29,7 @@ const Cart = () => {
     })
     const [formData, setFormData] = useState({
         name: '',
+        lastname: '',
         phone: '',
         email:''
     })
@@ -97,33 +98,48 @@ const Cart = () => {
                     <Modal title="INGRESO DE DATOS PARA PEDIDO" close={() => setShowModal()}>
                         {success ? (
                             <>
-                               <h2>Su orden se genero correctamente</h2>
-                               <p>ID de compra : {success}</p>
+                            <h2>¡Muchas gracias por tu compra!</h2>
+                            <h3>Su orden sera despachada a la brevedad, debajo le dejamos el identificador de su compra</h3>
+                            <p>ID de compra : {success}</p>
                             </>
                         ) : (
                             <form onSubmit={submitData}>
+                                <label>NOMBRE</label>
                                 <input 
                                     type='text' 
                                     name='name' 
-                                    placeholder='Ingrese el nombre'
+                                    placeholder='Por favor, ingrese su nombre'
                                     onChange={handleChange}
                                     value={formData.name}
                                 />
+                                <label>APELLIDO</label>
                                 <input 
+                                    type='text' 
+                                    name='lastname' 
+                                    placeholder='Por favor, ingrese su apellido'
+                                    onChange={handleChange}
+                                    value={formData.lastname}
+                                />
+                                <label>CONTACTO</label>
+                                <input
                                     type='number' 
                                     name='phone' 
-                                    placeholder='Ingrese el telefono' 
+                                    placeholder='Por favor, ingrese su contacto' 
                                     value={formData.phone}
                                     onChange={handleChange}
                                 />
+                                <label>E-MAIL</label>
                                 <input 
                                     type='email' 
                                     name='email' 
-                                    placeholder='Ingrese el mail'
+                                    placeholder='Por favor, ingrese su e-mail'
                                     value={formData.email}
                                     onChange={handleChange}
                                 />
-                                <button type="submit">Enviar</button>
+
+                                <div className="info-subtotal">
+                                    <button value="cart" type="submit" onClick={() => clearCart()}>Enviar</button>
+                                </div>
                             </form>
                         )}
                     </Modal>

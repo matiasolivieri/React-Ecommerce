@@ -11,7 +11,7 @@
 
 .backshadow .custom-modal {
     width: 500px;
-    height: 500px;
+    height: 550px;
     background-color: #fff;
     position: relative;
     padding: 20px;
@@ -41,13 +41,13 @@ input[type=text], [type=number], [type=email] {
     box-sizing: border-box;
   }
 
-button[type=submit] {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 100%
-  }
+button[type=submit]{
+    content: "";
+    width: 490px;
+    height: 50px;
+    position: center;
+    top: -45px;
+    left: -14px;
+    border: 1px solid black;
+    bottom: 104px;
+}
