@@ -1,10 +1,12 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
+import { AiOutlineCar } from "react-icons/ai";
 import './Cart.scss' 
 import Modal from '../Modal/Modal'
+
+/*  import firebase */
 import db from '../../firebaseConfig'
 import { collection, addDoc } from 'firebase/firestore'
-import { AiOutlineCar } from "react-icons/ai";
 
 const Cart = () => {
     const [showModal, setShowModal] = useState(false)
@@ -120,7 +122,6 @@ const Cart = () => {
                                     placeholder='Ingrese el mail'
                                     value={formData.email}
                                     onChange={handleChange}
-
                                 />
                                 <button type="submit">Enviar</button>
                             </form>

@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom"
 import "./CartWidget.scss";
 
+
 /*  import material */
-import {useState } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,7 +12,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartWidget =()=>{
 
-    const { cartProducts, clearCart, removeAllUnitsFromCart, buyCart, totalProducts} = useContext(CartContext)
+    const { cartProducts, clearCart, removeAllUnitsFromCart, totalProducts} = useContext(CartContext)
 
     const [anchorEl, setAnchorEl] = useState(null);
     // eslint-disable-next-line
@@ -52,18 +53,18 @@ return(
                 return(
                     <div className='item-cart-product widgetCart' key={product.id}>
                         <img src={`/assets/${product.image}`} className="productImgCartWidget"  alt="" />
-                        <div className='cart-product__details'>
-                            <p className="widgetTitle">{product.title}</p>
-                            <p>Cantidad: {product.inCart}</p>
-                            <p className="widgetPrice">$ {product.price * product.inCart}</p>
-                        </div>
+                            <div className='cart-product__details'>
+                                <p className="widgetTitle">{product.title}</p>
+                                <p>Cantidad: {product.inCart}</p>
+                                <p className="widgetPrice">USD {product.price * product.inCart}</p>
+                            </div>
                         <div className='cart-product__action'>
                             <DeleteIcon className="WidgetClear" onClick={()=> handleClickRemoveAll(product)}/>
                         </div>
                     </div>
                 )
             })}
-             {cartProducts.length>0? <button className="comprarCarrito" onClick={() => buyCart()}>Comprar carrito</button>:<></>}
+            {cartProducts.length>0? <Link to='/cart'><button className="comprarCarrito">Comprar carrito</button></Link>:<></>}
             {cartProducts.length>0? <button className="eliminarCarrito" onClick={() => clearCart()}>Eliminar carrito</button>:<div className="carritoVacio"><p>¡El carrito esta vacio!</p></div>}           
         </Menu>
     </div>

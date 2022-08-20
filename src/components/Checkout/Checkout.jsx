@@ -2,9 +2,9 @@ const Checkout = () => {
 
 return (
         <div className='countProd'>
-                    <div>
-                        <button>Terminar mi compra</button>
-                    </div>
+             <div>
+                <button>Terminar mi compra</button>
+            </div>
         </div>
     )
 }
