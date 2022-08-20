@@ -9,7 +9,7 @@ const ItemDetail = ({products}) => {
 
     const [quantitySelected, setQuantitySelected] = useState(0)
 
-    const {title , description, inCart,  price , image , stock}  = products
+    const {title , description, price , image , stock}  = products
     
     return(
         <div className="container">

@@ -10,7 +10,8 @@ const Cart = () => {
     const [showModal, setShowModal] = useState(false)
     const { cartProducts, clearProduct, totalCart, clearCart } = useContext(CartContext)
     const [success, setSuccess] = useState()
-
+    
+    // eslint-disable-next-line
     const [order, setOrder] = useState({
         items: cartProducts.map((product) => {
             return {

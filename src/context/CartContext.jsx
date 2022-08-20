@@ -6,6 +6,7 @@ const CartProvider =({children})=>{
     const [cartProducts, setCartProducts] = useState([]);
     const [totalProducts, setTotalProducts] = useState(0)
     const [totalCart, setTotalCart] = useState(0)
+    // eslint-disable-next-line
     const [inCart, setInCart] = useState()
 
     useEffect(() => {

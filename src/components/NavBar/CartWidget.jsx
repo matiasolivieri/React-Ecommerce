@@ -14,7 +14,7 @@ const CartWidget =()=>{
     const { cartProducts, clearCart, removeAllUnitsFromCart, buyCart, totalProducts} = useContext(CartContext)
 
     const [anchorEl, setAnchorEl] = useState(null);
-
+    // eslint-disable-next-line
     const [amountInCart, setAmountInCart] = useState(0);
 
     function handleClickRemoveAll(product){

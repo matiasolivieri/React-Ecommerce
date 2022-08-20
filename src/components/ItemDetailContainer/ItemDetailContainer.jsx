@@ -10,13 +10,6 @@ const ItemDetailContainer = () => {
     const [Item, setItem] = useState([])
     const {id} = useParams()
 
-    useEffect(() => {
-        getProduct()
-        .then((res) => {
-            setItem(res)
-        })
-    }, [id])
-
     const getProduct = async () => {
         const docRef = doc(db, 'productos', id)
         const docSnapshot = await getDoc(docRef)
@@ -24,6 +17,16 @@ const ItemDetailContainer = () => {
         product.id = docSnapshot.id
         return product
     }
+
+    useEffect(() => {
+        getProduct()
+        .then((res) => {
+            setItem(res)
+        })
+         // eslint-disable-next-line
+    }, [id])
+
+
 
     return(
         <div className='list-products'>

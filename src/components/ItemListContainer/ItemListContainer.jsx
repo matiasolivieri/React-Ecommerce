@@ -10,23 +10,24 @@ const ItemListContainer = ({article}) => {
     const [listProduct, setListProduct] = useState([])
     const {categoryid} = useParams()
 
-    const getProducts = async () => {
-        const productCollection = collection(db, 'productos')
-        const productSnapshot = await getDocs(productCollection)
-        const productList = productSnapshot.docs.map((doc) => {
-            let product = doc.data()
-            product.id = doc.id
-            return product
-        })
-        return productList
-    }
-
     useEffect(() => {
-        getProducts()
-        .then((res) => {
-            setListProduct(res)
-        })
-    }, [])
+        const productsCollection = collection(db, "productos")
+        if (categoryid) {
+
+            const cons = query(productsCollection, where("category", "==", categoryid))
+            getDocs(cons).then(({docs}) => {
+                setListProduct(docs.map((doc) => ({id: doc.id, ...doc.data() })))
+            }).catch((error) => {
+                console.log(error)
+            })
+        } else {
+            getDocs(productsCollection).then(({docs}) => {
+                setListProduct(docs.map((doc) => ({...doc.data(), id: doc.id})))
+            }).catch((error) => {
+                console.log(error)
+            })
+        }
+    }, [categoryid])
 
     return(
         <div className='list-products'>
