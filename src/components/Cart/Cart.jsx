@@ -8,7 +8,7 @@ import Modal from '../Modal/Modal'
 import db from '../../firebaseConfig'
 import { collection, addDoc } from 'firebase/firestore'
 
-const Cart = () => {
+const Cart = ({close}) => {
     const [showModal, setShowModal] = useState(false)
     const { cartProducts, clearProduct, totalCart, clearCart } = useContext(CartContext)
     const [success, setSuccess] = useState()
@@ -95,12 +95,15 @@ const Cart = () => {
                             </div>
                 </div>
                 {showModal && 
-                    <Modal title="INGRESO DE DATOS PARA PEDIDO" close={() => setShowModal()}>
+                    <Modal close={() => setShowModal()}>
                         {success ? (
                             <>
-                            <h2>¡Muchas gracias por tu compra!</h2>
-                            <h3>Su orden sera despachada a la brevedad, debajo le dejamos el identificador de su compra</h3>
-                            <p>ID de compra : {success}</p>
+                            <div className="popup">
+                                <img src="/assets/tick.png" alt="tick"/>
+                                <h2>¡Muchas gracias por tu compra!</h2>
+                                <h3>Su orden sera despachada a la brevedad, debajo le dejamos el identificador de su compra</h3>
+                                <p>ID de compra : {success}</p>
+                            </div>
                             </>
                         ) : (
                             <form onSubmit={submitData}>
@@ -138,7 +141,7 @@ const Cart = () => {
                                 />
 
                                 <div className="info-subtotal">
-                                    <button value="cart" type="submit" onClick={() => clearCart()}>Enviar</button>
+                                    <button value="cart" type="submit">Enviar</button>
                                 </div>
                             </form>
                         )}
