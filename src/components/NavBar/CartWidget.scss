@@ -62,7 +62,8 @@ img.productImgCartWidget{
 
 .comprarCarrito{
     font-family: 'Montserrat', sans-serif;
-    background-color: rgba(85, 88, 85, 0.21);
+    background-color: black;
+    color: white;
     padding: 2px;
     width: 96%;
     margin-left: 2%;
@@ -73,12 +74,13 @@ img.productImgCartWidget{
     
 }
 .comprarCarrito:hover{
-    background-color: rgb(152, 247, 181);
+    background-color: rgb(49, 49, 49)
 }
 
 
 .eliminarCarrito{
-    background-color: rgba(85, 88, 85, 0.21);
+    background-color: black;
+    color: white;
     font-family: 'Montserrat', sans-serif;
     padding: 2px;
     width: 96%;
@@ -89,7 +91,7 @@ img.productImgCartWidget{
     margin-bottom: 2%;
 }
 .eliminarCarrito:hover{
-    background-color: rgb(253, 174, 174);
+    background-color: rgb(49, 49, 49)
 }
 .carritoVacio p{
     font-size: 1.2rem;

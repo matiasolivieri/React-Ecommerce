@@ -7,21 +7,13 @@ import "./CartWidget.scss";
 /*  import material */
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
-import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const CartWidget =()=>{
 
-    const { cartProducts, clearCart, removeAllUnitsFromCart, totalProducts} = useContext(CartContext)
+    const { cartProducts, clearCart, totalProducts} = useContext(CartContext)
 
     const [anchorEl, setAnchorEl] = useState(null);
-    // eslint-disable-next-line
-    const [amountInCart, setAmountInCart] = useState(0);
-
-    function handleClickRemoveAll(product){
-        setAmountInCart(0);
-        removeAllUnitsFromCart(product);
-    }
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -58,9 +50,6 @@ return(
                                 <p>Cantidad: {product.inCart}</p>
                                 <p className="widgetPrice">USD {product.price * product.inCart}</p>
                             </div>
-                        <div className='cart-product__action'>
-                            <DeleteIcon className="WidgetClear" onClick={()=> handleClickRemoveAll(product)}/>
-                        </div>
                     </div>
                 )
             })}

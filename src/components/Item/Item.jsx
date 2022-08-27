@@ -1,5 +1,5 @@
 import './Item.scss'
-import { AiFillHeart, AiOutlineCreditCard, AiTwotoneCar, AiOutlineTag } from "react-icons/ai" 
+import { AiOutlineCreditCard, AiTwotoneCar, AiOutlineTag } from "react-icons/ai" 
 import { Link } from 'react-router-dom'
 
 const Item = ({data}) => {
@@ -12,9 +12,8 @@ const Item = ({data}) => {
             <Link to={`/productos/${id}`}>
                 <div className='float-options'>
                     <p>ENVIO FLASH</p>
-                    <button><AiFillHeart /></button>
                 </div>
-                    <img src={`/assets/${image}`} alt="Imagen producto" />
+                    <img src={`/assets/${image}`} alt="Imagen del producto" />
                 <div className='detail-product'>
                     <p>{title}</p>
                     <p><AiOutlineCreditCard /> 12 Cuotas sin interés</p>

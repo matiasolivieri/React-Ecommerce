@@ -1,4 +1,4 @@
-# TecnoPC 
+# TecnoPC Bussines
 
 TecnoPC es la plataforma que te permite realizar compras de componentes de PC de cualquier marca internacional conocida ya sean AMD o INTEL, al igual que NVIDIA. En la misma encontraras un gran catalogo para visualizar con la opcion de comprar uno o varios productos.
 
@@ -34,13 +34,25 @@ En este proyecto se utilizaron todas las dependencias trabajadas en clase, las u
 
 ### Material UI
 
-        Esta libreria se usa para dar estilos personalizados a los proyectos de React
+        Esta libreria te ayuda a enviar un determinado formulario de tu aplicacion a un mail.
 
                         npm install @mui/material @emotion/react @emotion/styled
 
         Tambien se utilizan los iconos de material
 
                         npm install @mui/icons-material
+
+### Email JS
+
+        Esta libreria se usa para dar estilos personalizados a los proyectos de React
+
+                        npm i emailjs
+
+        En este proyecto es utilizado para que una vez finalices tu compra, los datos sean enviados via mail al comprador
+
+## Navegabilidad
+
+Dejo adjunto el link hacia el video para poder ver la navegabilidad de la aplicacion web: https://youtu.be/7a29fRVPkg0
 
 ## Licencia 
 

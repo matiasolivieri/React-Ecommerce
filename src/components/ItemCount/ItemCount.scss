@@ -19,11 +19,14 @@
     font-size: 17px;
     margin: 5px;
     font-family: 'Montserrat', sans-serif;
+    color: white;
     border-radius: 5px;
+    background-color: black;
 }
 
 .agregar:hover {
-    background-color: rgb(152, 247, 181);
+    background-color: rgb(49, 49, 49)
+
 }
 
 .restar {
@@ -31,11 +34,13 @@
     font-size: 17px;
     margin: 5px;
     font-family: 'Montserrat', sans-serif;
+    background-color: black;
     border-radius: 5px;
+    color: white;
 }
 
 .restar:hover {
-    background-color: rgb(253, 174, 174)
+    background-color: rgb(49, 49, 49)
 }
 
 .carrito {
@@ -44,8 +49,10 @@
     margin: 5px;
     font-family: 'Montserrat', sans-serif;
     border-radius: 5px;
+    background-color: black;
+    color: white;
 }
 
 .carrito:hover {
-    background-color: rgb(174, 221, 253)
+    background-color: rgb(49, 49, 49)
 }
