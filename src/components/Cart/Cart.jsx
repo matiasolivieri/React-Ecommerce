@@ -3,15 +3,16 @@ import { CartContext } from "../../context/CartContext"
 import { AiOutlineCar } from "react-icons/ai";
 import './Cart.scss' 
 import Modal from '../Modal/Modal'
+import emailjs from 'emailjs-com'
 
 /*  import firebase */
 import db from '../../firebaseConfig'
 import { collection, addDoc } from 'firebase/firestore'
 
-const Cart = ({close}) => {
-    const [showModal, setShowModal] = useState(false)
+const Cart = () => {
+    const [ showModal, setShowModal ] = useState(false)
     const { cartProducts, clearProduct, totalCart, clearCart } = useContext(CartContext)
-    const [success, setSuccess] = useState()
+    const [ success, setSuccess ] = useState()
     
     // eslint-disable-next-line
     const [order, setOrder] = useState({
@@ -43,6 +44,7 @@ const Cart = ({close}) => {
     const submitData = (e) => {
         e.preventDefault()
         pushData({...order, buyer: formData})
+        emailjs.sendForm('service_d28ipsc', 'template_jwbygm9', e.target, 'R8xwfChVcqvzHbufa')
     }
 
     const pushData = async (newOrder) => {
@@ -102,6 +104,7 @@ const Cart = ({close}) => {
                                 <img src="/assets/tick.png" alt="tick"/>
                                 <h2>¡Muchas gracias por tu compra!</h2>
                                 <h3>Su orden sera despachada a la brevedad, debajo le dejamos el identificador de su compra</h3>
+                                <h3>Te llegara un mail de confirmacion de compra.</h3>
                                 <p>ID de compra : {success}</p>
                             </div>
                             </>
@@ -141,7 +144,7 @@ const Cart = ({close}) => {
                                 />
 
                                 <div className="info-subtotal">
-                                    <button value="cart" type="submit">Enviar</button>
+                                    <button value="cart" type="submit" onClick={clearCart}>Enviar</button>
                                 </div>
                             </form>
                         )}
